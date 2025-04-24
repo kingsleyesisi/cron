@@ -1,19 +1,26 @@
-name: Run scale.py every 2 hours on: schedule: # Runs at minute 0 every 2nd hour - cron: '0 */2 * * *'
+name: Run scale.py every 2 hours
+on:
+  schedule:
+    # Runs at minute 0 every 2nd hour
+    - cron: '0 */2 * * *'
+  # Also allow manual trigger
+  workflow_dispatch:
+jobs:
+  run-scale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-Also allow manual trigger
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-workflow_dispatch: jobs: run-scale: runs-on: ubuntu-latest steps: - name: Checkout repository uses: actions/checkout@v3
+      - name: Install dependencies
+        # Adjust if you don't have requirements.txt
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-- name: Set up Python
-    uses: actions/setup-python@v4
-    with:
-      python-version: '3.x'
-
-  - name: Install dependencies
-    # Adjust if you don't have requirements.txt
-    run: |
-      if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-  - name: Run scale.py
-    run: python scale.py
-
+      - name: Run scale.py
+        run: python scale.py
