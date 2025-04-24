@@ -2,11 +2,11 @@ import asyncio
 import aiohttp
 import time
 
-URL = 'url:url//url'
+URL = 'https://fasticket.onrender.com/events/getAll'
 COMPLETED = 0
-REQUEST_PER_SECOND = 1000
+REQUEST_PER_SECOND = 10000
 
-TEST_DURATION = 6000 # 1 minute
+TEST_DURATION = 2000 # 1 minute
 
 DATA = {
 
