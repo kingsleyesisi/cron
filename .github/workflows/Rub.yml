@@ -1,10 +1,11 @@
-name: Run scale.py every 2 hours
+name: Run scale.py every hour
 on:
   schedule:
-    # Runs at minute 0 every 2nd hour
-    - cron: '0 */2 * * *'
+    # Runs at minute 0 every hour
+    - cron: '0 * * * *'
   # Also allow manual trigger
   workflow_dispatch:
+
 jobs:
   run-scale:
     runs-on: ubuntu-latest
