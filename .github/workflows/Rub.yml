@@ -2,7 +2,7 @@ name: Run scale.py every hour
 on:
   schedule:
     # Runs at minute 0 every hour
-    - cron: '0/30 * * * *'
+    - cron: '0/10 * * * *'
   # Also allow manual trigger
   workflow_dispatch:
 
