@@ -1,4 +1,4 @@
-name: Run scale.py every hour
+name: Run Cron Job
 on:
   schedule:
     # Runs at minute 0 every hour
