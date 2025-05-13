@@ -4,9 +4,9 @@ import time
 
 URL = 'https://wallet-qrs0.onrender.com'
 COMPLETED = 0
-REQUEST_PER_SECOND = 10000
+REQUEST_PER_SECOND = 10
 
-TEST_DURATION = 200 # 1 minute
+TEST_DURATION = 180 # 3 minute
 
 DATA = {
 
@@ -53,7 +53,7 @@ class GetTest:
         async with aiohttp.ClientSession() as session:
             start_time = time.time()
             while time.time() - start_time < TEST_DURATION:
-                success_count, failure_count = await self.load_test(session=session, url='https://nextrade-online.onrender.com', num_requests=REQUEST_PER_SECOND)
+                success_count, failure_count = await self.load_test(session=session, url='https://nextrade-online.onrender.com/login.php', num_requests=REQUEST_PER_SECOND)
                 print(f"Success count: {success_count}, Failure count: {failure_count}")
                 print(f'send {REQUEST_PER_SECOND} requests in 1 second')
                 done = COMPLETED + success_count
