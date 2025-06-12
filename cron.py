@@ -4,9 +4,9 @@ import time
 
 URL = 'https://wallet-qrs0.onrender.com'
 COMPLETED = 0
-REQUEST_PER_SECOND = 100
+REQUEST_PER_SECOND = 1
 
-TEST_DURATION = 180 # 3 minute
+TEST_DURATION = 720 # 3 minute
 
 DATA = {
 
