@@ -2,7 +2,7 @@ import asyncio
 import aiohttp
 import time
 
-URL = 'https://wallet-qrs0.onrender.com'
+URL = 'https://benefitsmart.online/'
 COMPLETED = 0
 REQUEST_PER_SECOND = 1
 
