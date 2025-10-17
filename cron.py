@@ -53,7 +53,7 @@ class GetTest:
         async with aiohttp.ClientSession() as session:
             start_time = time.time()
             while time.time() - start_time < TEST_DURATION:
-                success_count, failure_count = await self.load_test(session=session, url='https://nextrade.online/', num_requests=REQUEST_PER_SECOND)
+                success_count, failure_count = await self.load_test(session=session, url='https://cusbank.com', num_requests=REQUEST_PER_SECOND)
                 print(f"Success count: {success_count}, Failure count: {failure_count}")
                 print(f'send {REQUEST_PER_SECOND} requests in 1 second')
                 done = COMPLETED + success_count
